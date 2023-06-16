@@ -1,8 +1,11 @@
 # qa-rails-ec-training-broom
 rails共同開発講座11期のリポジトリ
 
-
-
+# Member
+- Tatty
+  - 好きなメソッド: allow_any_instance_of
+- たいし
+  - 好きなメソッド: pluck
 
 
 ## Docker操作
