@@ -6,7 +6,8 @@ rails共同開発講座11期のリポジトリ
   - 好きなメソッド: allow_any_instance_of
 - たいし
   - 好きなメソッド: pluck
-
+- 安藤
+  - 好きなメソッド: find_by
 
 ## Docker操作
 ゼロからdocker環境を立ち上げる場合は、上から順にコマンドを実行すればOK
