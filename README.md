@@ -6,6 +6,8 @@ rails共同開発講座11期のリポジトリ
   - 好きなメソッド: allow_any_instance_of
 - たいし
   - 好きなメソッド: pluck
+- サンプル生徒A
+  - 好きなメソッド: tap 
 
 
 ## Docker操作
