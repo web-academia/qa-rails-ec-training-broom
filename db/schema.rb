@@ -29,16 +29,18 @@ ActiveRecord::Schema.define(version: 2023_06_24_035150) do
 
   create_table "products", force: :cascade do |t|
     t.string "product_name", limit: 64
-    t.integer "category_id"
+    t.bigint "category_id"
     t.integer "price"
     t.string "description", limit: 256
-    t.integer "sale_status_id"
-    t.integer "product_status_id"
+    t.bigint "sale_status_id"
+    t.bigint "product_status_id"
     t.datetime "regist_date"
-    t.integer "user_id"
     t.boolean "delete_flag"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_products_on_category_id"
+    t.index ["product_status_id"], name: "index_products_on_product_status_id"
+    t.index ["sale_status_id"], name: "index_products_on_sale_status_id"
   end
 
   create_table "purchases", force: :cascade do |t|
@@ -47,9 +49,10 @@ ActiveRecord::Schema.define(version: 2023_06_24_035150) do
     t.string "purchase_company", limit: 128
     t.datetime "order_date"
     t.datetime "purchase_date"
-    t.integer "product_id"
+    t.bigint "product_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["product_id"], name: "index_purchases_on_product_id"
   end
 
   create_table "sale_statuses", force: :cascade do |t|
@@ -58,4 +61,8 @@ ActiveRecord::Schema.define(version: 2023_06_24_035150) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "products", "categories"
+  add_foreign_key "products", "product_statuses"
+  add_foreign_key "products", "sale_statuses"
+  add_foreign_key "purchases", "products"
 end

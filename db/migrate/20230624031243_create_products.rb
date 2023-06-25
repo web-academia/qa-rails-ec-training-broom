@@ -2,13 +2,13 @@ class CreateProducts < ActiveRecord::Migration[6.1]
   def change
     create_table :products do |t|
       t.string :product_name, :limit => 64
-      t.integer :category_id
+      t.references :category, foreign_key: true
       t.integer :price
       t.string :description, :limit => 256
-      t.integer :sale_status_id
-      t.integer :product_status_id
+      t.references :sale_status, foreign_key: true
+      t.references :product_status, foreign_key: true
       t.datetime :regist_date
-      t.integer :user_id
+      # t.references :user, foreign_key: true
       t.boolean :delete_flag
 
       t.timestamps
