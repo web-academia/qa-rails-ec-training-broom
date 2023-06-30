@@ -1,3 +1,3 @@
 class UserClassfication < ApplicationRecord
-  has_many :user_classfications, dependent: :destroy
+  has_many :user, dependent: :destroy
 end

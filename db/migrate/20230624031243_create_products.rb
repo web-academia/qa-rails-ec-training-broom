@@ -8,7 +8,6 @@ class CreateProducts < ActiveRecord::Migration[6.1]
       t.references :sale_status, foreign_key: true
       t.references :product_status, foreign_key: true
       t.datetime :regist_date
-      # TODO: User関係の構築ができたタイミングでコメントアウトを解除すること
       t.references :user, foreign_key: true
       t.boolean :delete_flag
 
