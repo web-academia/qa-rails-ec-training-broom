@@ -22,8 +22,8 @@ User.create!(
   phone_number: '09012345678',
   user_classfication_id: '1',
   company_name: '株式会社山田建設',
-  delete_flag: 'TRUE'
-  )
+  delete_flag: 'true'
+)
 
 User.create!(
   password: "1234word",
@@ -38,5 +38,5 @@ User.create!(
   phone_number: "08011112222",
   user_classfication_id: "1",
   company_name: "株式会社鈴木工業",
-  delete_flag: "TRUE"
-  )
+  delete_flag: "true"
+)
