@@ -39,3 +39,49 @@ User.create!(
   company_name: "株式会社鈴木工業",
   delete_flag: true
 )
+
+Category.create!(category_name: "文具")
+Category.create!(category_name: "食品・飲料")
+Category.create!(category_name: "スポーツ用品")
+Category.create!(category_name: "本・雑誌・マンガ")
+
+SaleStatus.create!(sale_status_name: "閲覧済み")
+SaleStatus.create!(sale_status_name: "検討中")
+SaleStatus.create!(sale_status_name: "購入手続き中")
+SaleStatus.create!(sale_status_name: "購入済み")
+
+ProductStatus.create!(product_status_name: "新品")
+ProductStatus.create!(product_status_name: "中古 - 優良")
+ProductStatus.create!(product_status_name: "中古 - 可")
+
+Product.create!(product_name: "電卓",
+                 category_id: 1,
+                 price: 250,
+                 description: "小型の電卓です",
+                 sale_status_id: 1,
+                 product_status_id: 1,
+                 user_id: 1)
+Product.create!(product_name: "ノート",
+                 category_id: 1,
+                 price: 150,
+                 description: "A4サイズのノートです",
+                 sale_status_id: 1,
+                 product_status_id: 1,
+                 user_id: 1)
+Product.create!(product_name: "鉛筆",
+                 category_id: 1,
+                 price: 80,
+                 description: "書きやすいです",
+                 sale_status_id: 1,
+                 product_status_id: 1,
+                 user_id: 2)
+Product.create!(product_name: "定規",
+                 category_id: 1,
+                 price: 100,
+                 description: "30cm定規です",
+                 sale_status_id: 1,
+                 product_status_id: 1,
+                 user_id: 2)
+
+Purchase.create!(product_id: 1, purchase_price: 500, purchase_quantity: 2, purchase_company: "A株式会社")
+Purchase.create!(product_id: 2, purchase_price: 150, purchase_quantity: 1, purchase_company: "B株式会社")
