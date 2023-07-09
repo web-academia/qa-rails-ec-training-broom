@@ -85,3 +85,73 @@ Product.create!(product_name: "定規",
 
 Purchase.create!(product_id: 1, purchase_price: 500, purchase_quantity: 2, purchase_company: "A株式会社")
 Purchase.create!(product_id: 2, purchase_price: 150, purchase_quantity: 1, purchase_company: "B株式会社")
+
+Order.create!(user_id: 1, order_date: "2023-07-01 10:20:30", order_number: 1)
+Order.create!(user_id: 2, order_date: "2023-07-02 15:25:35", order_number: 2)
+
+ShipmentStatus.create!(shipment_status_name: "準備中")
+ShipmentStatus.create!(shipment_status_name: "発送済")
+
+OrderDetail.create!(
+  product_id: 1,
+  order_id: 1,
+  shipment_status_id: 1,
+  order_quantity: 2,
+  shipment_date: "2023-07-02 12:22:32"
+)
+
+OrderDetail.create!(
+  product_id: 2,
+  order_id: 1,
+  shipment_status_id: 1,
+  order_quantity: 2,
+  shipment_date: "2023-07-02 12:22:32"
+)
+
+OrderDetail.create!(
+  product_id: 3,
+  order_id: 1,
+  shipment_status_id: 1,
+  order_quantity: 2,
+  shipment_date: "2023-07-02 12:22:32"
+)
+
+OrderDetail.create!(
+  product_id: 4,
+  order_id: 1,
+  shipment_status_id: 1,
+  order_quantity: 2,
+  shipment_date: "2023-07-02 12:22:32"
+)
+
+OrderDetail.create!(
+  product_id: 1,
+  order_id: 2,
+  shipment_status_id: 2,
+  order_quantity: 2,
+  shipment_date: "2023-07-05 18:30:45"
+)
+
+OrderDetail.create!(
+  product_id: 2,
+  order_id: 2,
+  shipment_status_id: 2,
+  order_quantity: 2,
+  shipment_date: "2023-07-05 18:30:45"
+)
+
+OrderDetail.create!(
+  product_id: 3,
+  order_id: 2,
+  shipment_status_id: 2,
+  order_quantity: 2,
+  shipment_date: "2023-07-05 18:30:45"
+)
+
+OrderDetail.create!(
+  product_id: 4,
+  order_id: 2,
+  shipment_status_id: 2,
+  order_quantity: 2,
+  shipment_date: "2023-07-05 18:30:45"
+)
