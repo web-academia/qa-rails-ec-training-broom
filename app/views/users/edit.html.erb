@@ -118,8 +118,8 @@ sans-serif;
           氏名<span style="float: right">姓</span>
         </td>
         <td>
-          <input type="text" style="margin-left:10px" maxlength="10" required><span
-            style="margin-right:35px"></span>名<input type="text" style="margin-left:10px" maxlength="10" required>
+          <input type="text" style="margin-left:10px" maxlength="10" required value=<%= @user.last_name %>><span
+            style="margin-right:35px"></span>名<input type="text" style="margin-left:10px" maxlength="10" required value=<%= @user.first_name %>>
         </td>
       </tr>
 
@@ -128,7 +128,7 @@ sans-serif;
           住所<span style="float: right">〒</span>
         </td>
         <td colspan="2">
-          <input type="text" style="margin-left:10px" size="25" pattern="\d{3}-?\d{4}" required>
+          <input type="text" style="margin-left:10px" size="25" pattern="\d{3}-?\d{4}" required value=<%= @user.zipcode %>>
         </td>
       </tr>
 
@@ -137,7 +137,7 @@ sans-serif;
           都道府県
         </td>
         <td colspan="2">
-          <input type="text" style="margin-left:10px" size="50" maxlength="5" required>
+          <input type="text" style="margin-left:10px" size="50" maxlength="5" required value=<%= @user.prefecture %>>
         </td>
       </tr>
 
@@ -146,7 +146,7 @@ sans-serif;
           市町村区
         </td>
         <td colspan="2">
-          <input type="text" style="margin-left:10px" size="50" maxlength="10" required>
+          <input type="text" style="margin-left:10px" size="50" maxlength="10" required value=<%= @user.municipality %>>
         </td>
       </tr>
 
@@ -155,7 +155,7 @@ sans-serif;
           番地
         </td>
         <td colspan="2">
-          <input type="text" style="margin-left:10px" size="50" maxlength="15" required>
+          <input type="text" style="margin-left:10px" size="50" maxlength="15" required value=<%= @user.address %>>
         </td>
       </tr>
 
@@ -164,7 +164,7 @@ sans-serif;
           マンション<br>部屋番号</br>
         </td>
         <td colspan="2">
-          <input type="text" style="margin-left:10px" size="50" maxlength="20" required>
+          <input type="text" style="margin-left:10px" size="50" maxlength="20" required value=<%= @user.apartments %>>
         </td>
       </tr>
 
@@ -173,7 +173,7 @@ sans-serif;
           メールアドレス
         </td>
         <td colspan="2">
-          <input type="email" style="margin-left:10px" size="65">
+          <input type="email" style="margin-left:10px" size="65" <%= @user.email %>>
         </td>
       </tr>
 
@@ -182,7 +182,7 @@ sans-serif;
           電話番号
         </td>
         <td colspan="2">
-          <input type="text" style="margin-left:10px" size="65" pattern="(^[0-9]+$){1,15}" required>
+          <input type="text" style="margin-left:10px" size="65" pattern="(^[0-9]+$){1,15}" required value=<%= @user.phone_number %>>
         </td>
       </tr>
     </table>
