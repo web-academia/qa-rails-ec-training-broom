@@ -2,6 +2,7 @@ class User < ApplicationRecord
   VAILD_PASSWORD_REGEXP = /\A[a-zA-Z0-9_\-]+\z/
   VAILD_EMAIL_REGEXP = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   VAILD_NUMBER_REGEXP = /\A[0-9]+\z/
+  has_secure_password
 
   has_many :orders, dependent: :destroy
   has_many :products, dependent: :destroy

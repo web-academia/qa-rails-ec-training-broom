@@ -10,6 +10,7 @@ UserClassfication.create!(user_classfication_name: '一般ユーザー')
 
 User.create!(
   password: 'pass1234',
+  password_confirmation: 'pass1234',
   last_name: '山田',
   first_name: '太郎',
   zipcode: '1230123',
@@ -26,6 +27,7 @@ User.create!(
 
 User.create!(
   password: "1234word",
+  password_confirmation: "1234word",
   last_name: "鈴木",
   first_name: "花子",
   zipcode: "4560456",
