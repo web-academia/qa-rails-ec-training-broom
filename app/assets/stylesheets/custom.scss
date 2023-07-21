@@ -10,6 +10,8 @@
     /*flexboxのみだと横並びに。これで縦並び */
     position: relative;
     /*←相対位置*/
+    padding-top: 70px;
+    /*←headerの高さ*/
     padding-bottom: 70px;
     /*←footerの高さ*/
     box-sizing: border-box;
@@ -29,6 +31,9 @@ sans-serif;
     background-color: #ffe040;
     z-index: 10;
     /* 要素の重なり順序指定 */
+    position: fixed;
+    top: 0;
+    width: 100%;
   }
 
   header h1 {
