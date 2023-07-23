@@ -1,5 +1,5 @@
-class User < ApplicationRecord  
-  VAILD_PASSWORD_REGEXP = /\A[a-zA-Z0-9_\-]+\z/
+class User < ApplicationRecord
+  VAILD_PASSWORD_REGEXP = /\A[a-zA-Z0-9_-]+\z/
   VAILD_EMAIL_REGEXP = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   VAILD_NUMBER_REGEXP = /\A[0-9]+\z/
   has_secure_password
@@ -17,10 +17,10 @@ class User < ApplicationRecord
   validates :zipcode, length: { is: 7 }
   validates :zipcode, format: { with: VAILD_NUMBER_REGEXP }
 
-  validates :prefecture, length: { maximum: 5 } 
-  validates :municipality, length: { maximum: 10 } 
-  validates :address, length: { maximum: 15 } 
-  validates :apartments, length: { maximum: 20 } 
+  validates :prefecture, length: { maximum: 5 }
+  validates :municipality, length: { maximum: 10 }
+  validates :address, length: { maximum: 15 }
+  validates :apartments, length: { maximum: 20 }
 
   validates :email, format: { with: VAILD_EMAIL_REGEXP }
   validates :email, uniqueness: true
