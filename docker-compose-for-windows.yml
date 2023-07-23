@@ -17,7 +17,3 @@ services:
       - db
     tty: true
     stdin_open: true
-
-volumes:
-  app_postgre:
-    external: true
