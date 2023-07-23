@@ -33,30 +33,29 @@
   </div>
   <div class="container">
     <p>全<%= @product_all.count %>件</p>
-    <table class="table table-hover" border="1" style="border-collapse: collapse">
-      <thead>
-        <tr class=" table-header">
-          <th class="text-left" width="55%">
-            商品名
-          </th>
-          <th class="text-center" width="15%">
-            商品カテゴリ
-          </th>
-          <th class="text-center" width="15%">
-            価格
-          </th>
-          <th class="text-center" width="15%"></th>
-        </tr>
-      </thead>
-      <% if @products %>
-      <tbody>
-        <% @products.each do |product| %>
-          <%= render product %>
-        <% end %>
-      </tbody>    
-      <% end %>
-    </table>
-    <% if @products.empty? %>
+    <% if @products.present? %>
+      <table class="table table-hover" border="1" style="border-collapse: collapse">
+        <thead>
+          <tr class=" table-header">
+            <th class="text-left" width="55%">
+              商品名
+            </th>
+            <th class="text-center" width="15%">
+              商品カテゴリ
+            </th>
+            <th class="text-center" width="15%">
+              価格
+            </th>
+            <th class="text-center" width="15%"></th>
+          </tr>
+        </thead> 
+        <tbody>
+          <% @products.each do |product| %>
+            <%= render product %>
+          <% end %>
+        </tbody>    
+      </table>
+    <% else %>
       <h2 class="text-center">検索結果がありませんでした</h2> 
     <% end %> 
   </div>
