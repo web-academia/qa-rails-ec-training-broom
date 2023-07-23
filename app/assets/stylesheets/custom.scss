@@ -12,6 +12,8 @@
     /*←相対位置*/
     padding-bottom: 70px;
     /*←footerの高さ*/
+    padding-top: 70px;
+    /*←headerの高さ*/
     box-sizing: border-box;
     /*←全て含めてmin-height:100vhにbody全体の表示領域を確保・指定*/
     min-height: 100vh;
@@ -23,12 +25,15 @@
       "Helvetica
 Neue", Helvetica,
 sans-serif;
-  }
+} 
 
   header {
     background-color: #ffe040;
     z-index: 10;
     /* 要素の重なり順序指定 */
+    position: fixed;
+    top: 0;
+    width: 100%;
   }
 
   header h1 {
@@ -52,6 +57,10 @@ sans-serif;
     background: #ffffff;
     flex: 1;
     /* header footerの高さを除いた、残りの部分がmainで埋まる */
+  }
+
+  thead {
+    background-color: #ffe040;
   }
 
   footer {
