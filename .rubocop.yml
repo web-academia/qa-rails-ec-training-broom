@@ -8,5 +8,5 @@ inherit_from:
   - "config/rubocop/rspec.yml"
 
 AllCops:
-  TargetRubyVersion: *.*.*
-  TargetRailsVersion: *.*.*.*
+  TargetRubyVersion: 3.0.5
+  TargetRailsVersion: 6.1.7.3
