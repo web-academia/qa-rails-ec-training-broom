@@ -1,5 +1,4 @@
 class ProductsController < ApplicationController
-  
   def index
     @products = Product.all.page(params[:page]).per(2)
     @product_all = Product.all
@@ -9,5 +8,4 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find_by(id: params[:id])
   end
-
 end
