@@ -7,16 +7,11 @@ class Product < ApplicationRecord
   belongs_to :product_status
 
   def self.search(keyword, category_id)
-     
-    if keyword.present? && category_id.present?
-      Product.where(['product_name LIKE ?', "%#{keyword}%" ]).where(category_id: category_id)
-    elsif keyword.present? && category_id.empty?
-      Product.where(['product_name LIKE ?', "%#{keyword}%" ])
-    elsif keyword.blank? && category_id.present?
-      Product.where(category_id: category_id) 
-    else
-      return Product.all
-    end
+ 
+    products = Product.all
+    products = products.where(['product_name LIKE ?', "%#{keyword}%" ]) if keyword.present?
+    products = products.where(category_id: category_id) if category_id.present?
+    products
 
   end
 end
