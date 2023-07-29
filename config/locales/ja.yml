@@ -6,3 +6,7 @@ ja:
       next: "次 ›"
       previous: "‹ 前"
       truncate: "…"
+
+  user_update:
+    success: "更新に成功しました"
+    failure: "更新に失敗しました"
