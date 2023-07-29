@@ -120,7 +120,7 @@ Product.create!(product_name: "Ruby入門書",
 Product.create!(product_name: "ターゲット1900",
                  category_id: 4,
                  price: 1200,
-                 description: "英単語長です",
+                 description: "英単語帳です",
                  sale_status_id: 1,
                  product_status_id: 1,
                  user_id: 2)                                             
