@@ -10,6 +10,8 @@
     /*flexboxのみだと横並びに。これで縦並び */
     position: relative;
     /*←相対位置*/
+    padding-top: 70px;
+    /*←headerの高さ*/
     padding-bottom: 70px;
     /*←footerの高さ*/
     padding-top: 70px;
@@ -80,4 +82,8 @@ sans-serif;
     text-align: right;
     font-weight: lighter;
     margin: 0 auto;
+  }
+
+  .table td {
+    border: none;
   }
