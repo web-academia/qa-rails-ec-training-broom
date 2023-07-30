@@ -418,7 +418,7 @@ Style/ZeroLengthPredicate:
   Enabled: false
 
 Layout/EndOfLine:
-  EnforcedStyle: lf
+  Enabled: false
 
 # 警告文が出ないようにする
 Gemspec/DeprecatedAttributeAssignment: # new in 1.30

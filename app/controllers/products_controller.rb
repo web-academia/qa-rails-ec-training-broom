@@ -1,8 +1,7 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all.page(params[:page]).per(2)
-    @product_all = Product.all
     @categories = Category.pluck("category_name")
+    @products = Product.search(params[:keyword], params[:category_id]).page(params[:page]).per(2)
   end
 
   def show

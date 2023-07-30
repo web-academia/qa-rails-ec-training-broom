@@ -82,6 +82,48 @@ Product.create!(product_name: "定規",
                  sale_status_id: 1,
                  product_status_id: 1,
                  user_id: 2)
+Product.create!(product_name: "玉ねぎ",
+                 category_id: 2,
+                 price: 210,
+                 description: "野菜です",
+                 sale_status_id: 1,
+                 product_status_id: 1,
+                 user_id: 1)           
+Product.create!(product_name: "食パン",
+                 category_id: 2,
+                 price: 150,
+                 description: "６枚切りです",
+                 sale_status_id: 1,
+                 product_status_id: 1,
+                 user_id: 2)                
+Product.create!(product_name: "バット",
+                 category_id: 3,
+                 price: 2500,
+                 description: "木製です",
+                 sale_status_id: 1,
+                 product_status_id: 1,
+                 user_id: 1)  
+Product.create!(product_name: "ボール",
+                 category_id: 3,
+                 price: 3000,
+                 description: "サッカーボールです",
+                 sale_status_id: 1,
+                 product_status_id: 1,
+                 user_id: 2)       
+Product.create!(product_name: "Ruby入門書",
+                 category_id: 4,
+                 price: 2800,
+                 description: "Rubyの入門書です",
+                 sale_status_id: 1,
+                 product_status_id: 1,
+                 user_id: 1)
+Product.create!(product_name: "ターゲット1900",
+                 category_id: 4,
+                 price: 1200,
+                 description: "英単語帳です",
+                 sale_status_id: 1,
+                 product_status_id: 1,
+                 user_id: 2)                                             
 
 Purchase.create!(product_id: 1, purchase_price: 500, purchase_quantity: 2, purchase_company: "A株式会社")
 Purchase.create!(product_id: 2, purchase_price: 150, purchase_quantity: 1, purchase_company: "B株式会社")
