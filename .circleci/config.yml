@@ -1,0 +1,39 @@
+version: 2.1
+orbs:
+  ruby: circleci/ruby@1.1.0
+  node: circleci/node@4.1.0
+
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:3.0.5
+        environment:
+          RAILS_ENV: test
+          PGHOST: localhost
+          PGUSER: ubuntu
+          RAILS_ENV: test
+      - image: circleci/postgres:9.6
+        environment:
+          POSTGRES_USER: ubuntu
+          POSTGRES_DB: circle_test
+    steps:
+      - checkout
+
+      - ruby/install-deps
+      - ruby/install-gem:
+          version: '6.1.7.3'
+
+      - run:
+          name: Setup Database
+          command: bundle exec rake db:create db:schema:load --trace
+
+      - run:
+          name: Run rubocop
+          command: bundle exec rubocop
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build
+
