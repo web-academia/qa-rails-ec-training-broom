@@ -1,12 +1,9 @@
 version: 2.1
 
-orbs:
-  node: circleci/node@4.1.0
-
 jobs:
   build:
     docker:
-      - image: cimg/ruby:3.0.5
+      - image: cimg/ruby:3.0.5-node
         environment:
           RAILS_ENV: test
           PGHOST: localhost
