@@ -10,11 +10,12 @@ jobs:
         environment:
           RAILS_ENV: test
           PGHOST: localhost
-          PGUSER: ubuntu
+          PGUSER: root
       - image: circleci/postgres:9.6
         environment:
-          POSTGRES_USER: ubuntu
-          POSTGRES_DB: circle_test
+          POSTGRES_USER: root
+          POSTGRES_DB: db 
+          POSTGRES_HOST_AUTH_METHOD: trust
     steps:
       - checkout
 
