@@ -18,9 +18,11 @@ jobs:
     steps:
       - checkout
 
-      - ruby/install-deps
-      - ruby/install-gem:
-          version: '6.1.7.3'
+      - run:
+          name: Install dependencies
+          command: |
+            gem install bundler
+            bundle install --path vendor/bundle
 
       - run:
           name: Setup Database
