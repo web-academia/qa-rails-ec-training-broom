@@ -15,6 +15,7 @@ class SessionsController < ApplicationController
 
   def destroy
     logout
+    @current_user = nil
     redirect_to login_path
   end
 end
