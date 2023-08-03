@@ -1,0 +1,42 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: cimg/ruby:3.0.5-node
+        environment:
+          RAILS_ENV: test
+
+# RSpecを実行する場合、こちらのコメントアウトを解除すること
+#          PGUSER: root
+#          PGHOST: 127.0.0.1
+#          DATABASE_URL: "postgresql://root@127.0.0.1:5432/db"
+#      - image: circleci/postgres:9.6
+#        environment:
+#          POSTGRES_USER: root
+#          POSTGRES_DB: db 
+#          POSTGRES_HOST_AUTH_METHOD: trust
+    steps:
+      - checkout
+
+      - run:
+          name: Install dependencies
+          command: |
+            gem install bundler
+            bundle install --path vendor/bundle
+
+# RSpecを実行する場合、こちらのコメントアウトを解除すること
+#       - run:
+#           name: Setup Database
+#           command: bundle exec rake db:create db:migrate db:seed
+
+      - run:
+          name: Run rubocop
+          command: bundle exec rubocop
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build
+
