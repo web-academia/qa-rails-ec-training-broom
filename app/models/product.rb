@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
   has_many :purchases, dependent: :destroy
   has_many :order_details, dependent: :destroy
+  has_one :cart_item
   belongs_to :user
   belongs_to :category
   belongs_to :sale_status
