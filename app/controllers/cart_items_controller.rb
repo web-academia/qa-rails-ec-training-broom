@@ -13,8 +13,12 @@ class CartItemsController < ApplicationController
   end
 
   def update
-    CartItem.find_by(id: params[:id]).update(quantity: params[:quantity].to_i)
-    redirect_to cart_path
+    if CartItem.find_by(id: params[:id]).update(quantity: params[:quantity].to_i)
+      redirect_to cart_path
+    else
+      flash.now[:danger] = 'この商品はカートにありません'
+      render 'carts/show'
+    end
   end
 
   def destroy
