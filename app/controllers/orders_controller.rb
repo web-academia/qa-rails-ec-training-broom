@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.create!(user_id: current_user.id, order_date: DateTime.now, order_number: rand(000000001..999999999))
-    cart_items = current_user.cart.cart_items.all
+    cart_items = current_user.cart.cart_items
     cart_items.each do |cart_item|
       OrderDetail.create!(product_id: cart_item.product_id, 
                           order_id: @order.id, 
