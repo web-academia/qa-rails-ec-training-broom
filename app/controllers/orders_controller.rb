@@ -11,7 +11,7 @@ class OrdersController < ApplicationController
                           order_quantity: cart_item.quantity, 
                           shipment_date: DateTime.now)
     end
-    render 'purchase_completed'
     cart_items.destroy_all
+    render 'purchase_completed'
   end
 end
