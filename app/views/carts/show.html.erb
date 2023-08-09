@@ -14,7 +14,7 @@
       </div>
     </div>
 
-    <% if @cart_items.present? %>
+    <% if @cart.cart_items.present? %>
 
     <div class="container">
       <div class="row">
@@ -42,7 +42,7 @@
             </tr>
           </thead>
           <tbody>   
-            <% @cart_items.each.with_index(1) do |cart_item, i| %>
+            <% @cart.cart_items.each.with_index(1) do |cart_item, i| %>
               <%= render 'cart_item', cart_item: cart_item, i: i %>
             <% end %>
             <tr class="text-right">
