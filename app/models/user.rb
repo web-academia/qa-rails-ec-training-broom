@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   has_many :orders, dependent: :destroy
   has_many :products, dependent: :destroy
-  has_one :cart
+  has_one :cart, dependent: :destroy
   belongs_to :user_classfication
 
   validates :password, length: { in: 6..15 }

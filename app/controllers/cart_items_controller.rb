@@ -1,9 +1,9 @@
 class CartItemsController < ApplicationController
   include SessionsHelper
 
-  def create
+  def create # rubocop:disable Metrics/AbcSize
     @cart = Cart.find_or_create_by!(user_id: current_user.id)
-    if item = @cart.cart_items.find_by(product_id: params[:product_id], cart_id: @cart.id)
+    if (item = @cart.cart_items.find_by(product_id: params[:product_id], cart_id: @cart.id))
       item.quantity += params[:quantity].to_i
     else
       item = @cart.cart_items.new(product_id: params[:product_id], cart_id: @cart.id, quantity: params[:quantity].to_i)
@@ -11,7 +11,7 @@ class CartItemsController < ApplicationController
     if item.save
       redirect_to cart_path
     else
-      flash.now[:danger] = '失敗しました'
+      flash.now[:danger] = t "cart_item_create.failure"
       redirect_to item.product
     end
   end
@@ -20,8 +20,8 @@ class CartItemsController < ApplicationController
     if CartItem.find_by(id: params[:id]).update(quantity: params[:quantity].to_i)
       redirect_to cart_path
     else
-      flash.now[:danger] = 'この商品はカートにありません'
-      render 'carts/show'
+      flash.now[:danger] = t "cart_item_updete.failure"
+      render "carts/show"
     end
   end
 
