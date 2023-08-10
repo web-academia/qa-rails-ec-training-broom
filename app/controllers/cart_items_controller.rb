@@ -8,8 +8,12 @@ class CartItemsController < ApplicationController
     else
       item = @cart.cart_items.new(product_id: params[:product_id], cart_id: @cart.id, quantity: params[:quantity].to_i)
     end
-    item.save
-    redirect_to cart_path
+    if item.save
+      redirect_to cart_path
+    else
+      flash.now[:danger] = '失敗しました'
+      redirect_to item.product
+    end
   end
 
   def update
