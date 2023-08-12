@@ -13,10 +13,10 @@ class OrdersController < ApplicationController
                             shipment_date: DateTime.now)
       end
       cart_items.destroy_all
-      render 'purchase_completed'
+      render "purchase_completed"
     end
-  rescue => e
+  rescue
     flash.now[:danger] = t "orders_create.failure"
-    redirect_to cart_path   
+    redirect_to cart_path
   end
 end
