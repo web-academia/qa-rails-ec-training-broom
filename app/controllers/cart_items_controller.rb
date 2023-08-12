@@ -17,7 +17,9 @@ class CartItemsController < ApplicationController
   end
 
   def update
-    if CartItem.find_by(id: params[:id]).update(quantity: params[:quantity].to_i)
+    cart_item = CartItem.find_by(id: params[:id])
+    if cart_item.update(quantity: params[:quantity].to_i)
+      cart_item.destroy! if cart_item.quantity < 1
       redirect_to cart_path
     else
       flash.now[:danger] = t "cart_item_updete.failure"
