@@ -1,23 +1,22 @@
-<% item = cart_item.product %>
 <tr class="text-center">
   <th class="align-middle">
     <%= i %>
   </th>
   <td class="align-middle">
-    <%= item.product_name %>
+    <%= cart_item.product.product_name %>
   </td>
   <td class="align-middle">
-    <%= item.category.category_name %>
+    <%= cart_item.product.category.category_name %>
   </td>
   <td class="align-middle">
-    <%= item.price %>
+    <%= cart_item.product.price %>
   </td>
   <td class="align-middle">
   <%= form_with url: cart_item_path(cart_item), local: true, method: :patch do |form| %>
     <%= form.text_field :quantity, class: "btn btn-outline-dark", value: cart_item.quantity %>個
   </td>
   <td class="align-middle">
-  <%= item.price * cart_item.quantity %>円
+  <%= cart_item.product.price * cart_item.quantity %>円
   </td>
   <td class="border-0 align-middle">
     <%= form.submit "更新", class: "btn btn-primary" %>
