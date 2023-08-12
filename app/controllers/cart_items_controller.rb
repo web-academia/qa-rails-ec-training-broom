@@ -3,7 +3,7 @@ class CartItemsController < ApplicationController
 
   def create # rubocop:disable Metrics/AbcSize
     @cart = Cart.find_or_create_by!(user_id: current_user.id)
-    if (item = @cart.cart_items.find_by(product_id: params[:product_id], cart_id: @cart.id))
+    if (item = @cart.cart_items.find_by(product_id: params[:product_id]))
       item.quantity += params[:quantity].to_i
     else
       item = @cart.cart_items.new(product_id: params[:product_id], cart_id: @cart.id, quantity: params[:quantity].to_i)
