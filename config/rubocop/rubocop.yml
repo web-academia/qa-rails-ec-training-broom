@@ -303,6 +303,9 @@ Style/NumericLiterals:
   MinDigits: 7
   Strict: true
 
+Style/NumericLiteralPrefix:
+  EnforcedOctalStyle: zero_only
+
 # foo.positive? は foo > 0 に比べて意味が曖昧になる
 # foo.zero? は許可したいけどメソッドごとに指定できないので一括で disable に
 Style/NumericPredicate:
