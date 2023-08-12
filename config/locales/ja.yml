@@ -16,4 +16,7 @@ ja:
 
   cart_item_update:
     failure: "この商品はカートにありません"
+
+  orders_create:
+    failure: "注文に失敗しました"
   

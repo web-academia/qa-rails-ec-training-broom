@@ -12,8 +12,11 @@ class OrdersController < ApplicationController
                             order_quantity: cart_item.quantity,
                             shipment_date: DateTime.now)
       end
-    cart_items.destroy_all
-    render 'purchase_completed'
+      cart_items.destroy_all
+      render 'purchase_completed'
     end
+  rescue => e
+    flash.now[:danger] = t "orders_create.failure"
+    redirect_to cart_path   
   end
 end
