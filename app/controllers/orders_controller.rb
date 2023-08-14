@@ -1,9 +1,9 @@
 class OrdersController < ApplicationController
   include SessionsHelper
 
-  def create
+  def create # rubocop:disable Metrics/AbcSize
     ActiveRecord::Base.transaction do
-      @order = Order.create!(user_id: current_user.id, order_date: DateTime.now, order_number: format("%09d", rand(999_999_999)))
+      @order = Order.create!(user_id: current_user.id, order_date: DateTime.now, order_number: "%09d" % rand(999_999_999))
       cart_items = current_user.cart.cart_items
       cart_items.each do |cart_item|
         OrderDetail.create!(product_id: cart_item.product_id,
