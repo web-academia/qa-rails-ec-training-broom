@@ -10,3 +10,13 @@ ja:
   user_update:
     success: "更新に成功しました"
     failure: "更新に失敗しました"
+
+  cart_item_create:
+    failure: "更新に失敗しました"
+
+  cart_item_update:
+    failure: "この商品はカートにありません"
+
+  orders_create:
+    failure: "注文に失敗しました"
+  

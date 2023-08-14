@@ -13,13 +13,16 @@
         </div>
         <div class="row justify-content-center">
           <label for="order_quanity" class="mt-1 col-sm-1">購入個数</label>
-          <div class="col-sm-1">
-            <input required type="text" class="form-control" id="order_quanity" pattern="[1-9][0-9]*" min="1">
-          </div>
-          <label class="mt-1 col-sm-1">個</label>
-          <div class="col-sm-2">
-            <button type="button" class="btn btn-primary btn-block">カートへ</button>
-          </div>
+          <%= form_with url: cart_items_path, local: true do |form| %>
+            <div class="col-sm-1">
+              <%= form.hidden_field :product_id, value: @product.id %>
+              <%= form.text_field :quantity %>
+            </div>
+            <label class="mt-1 col-sm-1">個</label>
+            <div class="col-sm-2">
+              <%= form.submit "カートへ", class: "btn btn-primary btn-sm" %>
+            </div>
+          <% end %>
         </div>
       </div>
     <% else %>

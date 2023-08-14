@@ -11,10 +11,10 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     @user.assign_attributes(user_params)
     if @user.save
-      flash[:success] = t user_update.success
+      flash[:success] = t "user_update.success"
       redirect_to @user
     else
-      flash.now[:danger] = t user_update.failure
+      flash.now[:danger] = t "user_update.failure"
       render "edit"
     end
   end
