@@ -6,7 +6,7 @@ class CartItemsController < ApplicationController
     if (item = @cart.cart_items.find_by(product_id: params[:product_id]))
       item.quantity += params[:quantity].to_i
     else
-      item = @cart.cart_items.new(product_id: params[:product_id], cart_id: @cart.id, quantity: params[:quantity].to_i)
+      item = @cart.cart_items.new(product_id: params[:product_id], quantity: params[:quantity].to_i)
     end
     if item.save
       redirect_to cart_path
