@@ -23,7 +23,7 @@ class CartItemsController < ApplicationController
       redirect_to cart_path
     else
       flash[:danger] = t "cart_item_update.failure"
-      render "carts/show"
+      redirect_to cart_path
     end
   end
 
