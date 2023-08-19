@@ -1,3 +1,6 @@
+<%= render 'shared/flash_messages.html.erb' %>
+<%= render 'shared/object_error_messages', object: @user %>
+
 <% provide(:title, "ユーザー情報修正") %>
   <main>
     <h2 class="text-center mt-5">ユーザ情報修正</h2>
