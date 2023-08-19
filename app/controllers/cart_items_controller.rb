@@ -20,6 +20,7 @@ class CartItemsController < ApplicationController
     cart_item = CartItem.find_by(id: params[:id])
     if cart_item.update(quantity: params[:quantity].to_i)
       cart_item.destroy! if cart_item.quantity < 1
+      flash[:success] = t "cart_item_update.success"
       redirect_to cart_path
     else
       flash[:danger] = t "cart_item_update.failure"
