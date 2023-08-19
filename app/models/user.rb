@@ -11,7 +11,7 @@ class User < ApplicationRecord
 
   validates :password, length: { in: 6..15 }, allow_blank: true, on: :update
   validates :password, format: { with: VAILD_PASSWORD_REGEXP }, allow_blank: true, on: :update
-  validates :password, presence: true
+  validates :password, presence: true, allow_blank: true, on: :update
 
   validates :last_name, length: { maximum: 10 }, presence: true
   validates :first_name, length: { maximum: 10 }, presence: true
