@@ -21,11 +21,10 @@ class CartItemsController < ApplicationController
     if cart_item.update(quantity: params[:quantity].to_i)
       cart_item.destroy! if cart_item.quantity < 1
       flash[:success] = t "cart_item_update.success"
-      redirect_to cart_path
     else
       flash[:danger] = t "cart_item_update.failure"
-      redirect_to cart_path
     end
+    redirect_to cart_path
   end
 
   def destroy
