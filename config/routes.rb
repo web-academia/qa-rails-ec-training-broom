@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root 'static_pages#home'
+
   resources :products
   resources :users
   resources :cart_items, :only => [:update, :create, :destroy]
