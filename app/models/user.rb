@@ -9,23 +9,25 @@ class User < ApplicationRecord
   has_one :cart, dependent: :destroy
   belongs_to :user_classfication
 
-  validates :password, length: { in: 6..15 }
-  validates :password, format: { with: VAILD_PASSWORD_REGEXP }
+  validates :password, length: { in: 6..15 }, allow_blank: true, on: :update
+  validates :password, format: { with: VAILD_PASSWORD_REGEXP }, allow_blank: true, on: :update
+  validates :password, presence: true, allow_blank: true, on: :update
 
-  validates :last_name, length: { maximum: 10 }
-  validates :first_name, length: { maximum: 10 }
+  validates :last_name, length: { maximum: 10 }, presence: true
+  validates :first_name, length: { maximum: 10 }, presence: true
 
   validates :zipcode, length: { is: 7 }
-  validates :zipcode, format: { with: VAILD_NUMBER_REGEXP }
+  validates :zipcode, format: { with: VAILD_NUMBER_REGEXP }, presence: true
 
-  validates :prefecture, length: { maximum: 5 }
-  validates :municipality, length: { maximum: 10 }
-  validates :address, length: { maximum: 15 }
-  validates :apartments, length: { maximum: 20 }
+  validates :prefecture, length: { maximum: 5 }, presence: true
+  validates :municipality, length: { maximum: 10 }, presence: true
+  validates :address, length: { maximum: 15 }, presence: true
+  validates :apartments, length: { maximum: 20 }, presence: true
 
   validates :email, format: { with: VAILD_EMAIL_REGEXP }
-  validates :email, uniqueness: true
+  validates :email, uniqueness: true, presence: true
 
   validates :phone_number, length: { maximum: 15 }
   validates :phone_number, format: { with: VAILD_NUMBER_REGEXP }
+  validates :phone_number, presence: true
 end

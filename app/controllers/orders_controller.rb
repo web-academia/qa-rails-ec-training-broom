@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
   include SessionsHelper
 
-  def create # rubocop:disable Metrics/AbcSize
+  def create
     ActiveRecord::Base.transaction do
       @order = Order.create!(user_id: current_user.id, order_date: DateTime.now, order_number: "%09d" % rand(999_999_999))
       cart_items = current_user.cart.cart_items
@@ -16,7 +16,7 @@ class OrdersController < ApplicationController
       render "purchase_completed"
     end
   rescue
-    flash.now[:danger] = t "orders_create.failure"
+    flash[:danger] = t "orders_create.failure"
     redirect_to cart_path
   end
 end
