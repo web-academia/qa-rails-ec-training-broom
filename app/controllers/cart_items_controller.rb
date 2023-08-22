@@ -11,7 +11,7 @@ class CartItemsController < ApplicationController
     if item.save
       redirect_to cart_path
     else
-      flash.now[:danger] = t "cart_item_create.failure"
+      flash[:danger] = t "cart_item_create.failure"
       redirect_to item.product
     end
   end
@@ -20,11 +20,11 @@ class CartItemsController < ApplicationController
     cart_item = CartItem.find_by(id: params[:id])
     if cart_item.update(quantity: params[:quantity].to_i)
       cart_item.destroy! if cart_item.quantity < 1
-      redirect_to cart_path
+      flash[:success] = t "cart_item_update.success"
     else
-      flash.now[:danger] = t "cart_item_updete.failure"
-      render "carts/show"
+      flash[:danger] = t "cart_item_update.failure"
     end
+    redirect_to cart_path
   end
 
   def destroy
