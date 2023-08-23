@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  include SessionsHelper
+
   def show
     @user = User.find_by(id: params[:id])
   end
@@ -15,6 +17,19 @@ class UsersController < ApplicationController
       redirect_to @user
     else
       flash.now[:danger] = t "user_update.failure"
+      render "edit"
+    end
+  end
+
+  def destroy
+    @user = User.find_by(id: params[:id])
+    if @user.id == current_user.id
+      @user.destroy!
+      reset_session
+      flash[:success] = t "user_destroy.success"
+      redirect_to login_path # TODO root_pathに書き換える
+    else
+      flash.now[:danger] = t "user_destroy.failure"
       render "edit"
     end
   end
