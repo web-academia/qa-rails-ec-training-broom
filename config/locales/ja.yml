@@ -20,7 +20,7 @@ ja:
 
   user_destroy:
     success: "退会しました"
-    failure: "自分以外のユーザーを削除することはできません"
+    failure: "退会処理に失敗しました"
 
   cart_item_create:
     failure: "カートに商品を追加できませんでした"
