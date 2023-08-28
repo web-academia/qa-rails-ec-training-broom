@@ -18,6 +18,10 @@ ja:
     success: "更新に成功しました"
     failure: "更新に失敗しました"
 
+  user_destroy:
+    success: "退会しました"
+    failure: "退会処理に失敗しました"
+
   cart_item_create:
     failure: "カートに商品を追加できませんでした"
 
