@@ -27,7 +27,7 @@ class UsersController < ApplicationController
       @user.destroy!
       reset_session
       flash[:success] = t "user_destroy.success"
-      redirect_to login_path # TODO: root_pathに書き換える
+      redirect_to root_path
     else
       flash.now[:danger] = t "user_destroy.failure"
       render "edit"
